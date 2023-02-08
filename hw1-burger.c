@@ -5,7 +5,7 @@
 // Course: CS451
 // Student Name: Nick Burger
 // Instructor: Dr. Cho
-// Date of submission: ...
+// Date of submission: 2/6/2023
 // Program Description: Takes in filled with years and each 
 // of its months average temps and outputs the year, average
 // temperature for that year, the coldest month, the hottest month,
@@ -36,7 +36,8 @@ int main()
     printf("%s     %s     %s     %s","====","=======","=============","=============");
     printf("%s\n", " ");
 
-    int num, i, year;
+    int num, year;
+    int i = 0;
     float temperature[12];
     fscanf(ptr, "%d", &num);
 
@@ -74,12 +75,13 @@ int main()
     char *months[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
     while (num > 0) {
+        i = 0; 
         fscanf(ptr, "%d\n", &year);
-        for (i = 0; i < 12; i++) {
+        for (i; i < 12; i++) {
             fscanf(ptr, "%f", &temperature[i]);
         }
         num--;
-
+        
         float total = 0; //variable to store total temps throughout the year to calculate the average
         float avg = 0; //varible to store the average temperature for the year
         float coldest = temperature[0]
@@ -101,7 +103,8 @@ int main()
         totNov = totNov + temperature[10];
         totDec = totDec + temperature[11];
 
-        for (i = 0; i < 12; i++){
+        i = 0;
+        for (i; i < 12; i++){
             total = total + temperature[i]; //keep a running total of the temperatures for the year
 
             //find coldest month in the year
